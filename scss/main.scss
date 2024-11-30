@@ -124,6 +124,17 @@
                             border-radius: 10px;
                             overflow:hidden;
                             img{width:100%;}
+                            .num{position:absolute;
+                                bottom:0;
+                                left:0;
+                                font-weight: 400;
+                                font-size: 50px;
+                                font-style: italic;
+                                color: #fff;
+                                line-height: 1em;
+                                z-index: 3;
+                                text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.45);
+                            }
                             & + div{
                                 text-align:center;
                                 strong{

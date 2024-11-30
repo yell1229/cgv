@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CGV | 회원가입</title>
+        <link rel="stylesheet" href="css/join_form.css">
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="js/joinMember.js" defer></script>
+    </head>
+<body>
+    <div class="wrap">
+    <!-- content -->
+    <div class="content">
+        <div class="join-form center-layout">
+            <h1 class="center-title">회원가입</h1>
+            <form action="#" method="post">
+                <ul>
+                    <li class="id">
+                        <label for="" ><b>아이디</b></label>
+                        <span>아이디를 입력해 주세요.</span>
+                        <div>
+                            <input type="text" name="id" placeholder="아이디 입력(6~20자)" class="id" oninput="checkValidation(event)">
+                            <input type="hidden" value="no" class="dbl_check">
+                            <button type="button" onclick="dblCheck()">중복확인</button>       
+                        </div>
+                    </li>
+                    <li>
+                        <label for=""><b>비밀번호</b></label>
+                        <span>12자 이내의 비밀번호를 입력해주세요</span>
+                        <div>
+                            <input type="password" name="pwd" placeholder="비밀번호 입력(문자,숫자,특수문자 포함 6~12자)" class="pwd" oninput="checkValidation(event)">
+                        </div>
+                    </li>
+                    <li>
+                        <label for=""><b>비밀번호 확인</b></label>
+                        <span>비밀번호가 일치하지 않습니다</span>
+                        <div>
+                            <input type="password" name="cpwd" placeholder="비밀번호 재입력" class="cpwd" oninput="checkValidation(event)" onblur="checkPassword()">
+                        </div>
+                    </li>
+                    <li>
+                        <label for=""><b>이름</b></label>
+                        <span>이름을 입력해주세요.</span>
+                        <div>
+                            <input type="text" name="name" placeholder="이름을 입력해주세요" class="name" oninput="checkValidation(event)">
+                        </div>
+                    </li>
+                    <li>
+                        <label for=""><b>전화번호</b></label>
+                        <span>전화번호를 입력해주세요.</span>
+                        <div>
+                            <input type="text" name="phone" placeholder="휴대폰 번호 입력('-' 포함)" class="phone" oninput="checkValidation(event)">
+                        </div>
+                    </li>
+                    <li class="email">
+                        <label for=""><b>이메일 주소</b></label>
+                        <span>이메일주소를 입력해주세요.</span>
+                        <div>
+                            <input type="text" name="emailname" placeholder="이메일 주소" class="emailname" oninput="checkValidation(event)">
+                            <span>@</span>       
+                            <select name="emaildomain" class="emaildomain">
+                                <option value="default">선택</option>
+                                <option value="naver.com">naver.com</option>
+                                <option value="gmail.com">gmail.com</option>
+                                <option value="daum.net">daum.net</option>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+                <div class="btns">
+                    <button type="button" onclick="joinFormCheck()">가입하기</button>
+                    <button type="reset">가입취소</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+            
+    </footer>
+    <!-- // footer -->
+    <div class="q_nav_area">
+        <a class="btn_go">예매하기</a>
+        <div class="btn_top"><img src="img/gotoTop.png" alt=""></div>
+    </div>
+</div>
+</body>
+</html>
