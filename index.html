@@ -7,37 +7,57 @@
     <link rel="stylesheet" href="./css/reset.css">
     <style>
         body{display:flex;justify-content: center;align-items: center;}
-        table{width:800px;border:1px solid #ccc;border-collapse: collapse;border-spacing: 0;}
-        th,td{padding:5px;border:1px solid #ccc;font-size:13px;}
+        table{width:900px;border:1px solid #ccc;border-collapse: collapse;border-spacing: 0;}
+        th,td{padding:8px;border:1px solid #ccc;font-size:13px;line-height:1.8;text-align:center}
+        td:last-child{text-align:left}
         a{color:rgb(199, 0, 126);}
     </style>
 </head>
 <body>
     <table>
         <colgroup>
-            <col style="width:80px;">
-            <col style="width:200px;">
+            <col style="width:40px;">
+            <col style="width:180px;">
+            <col style="width:130px;">
             <col>
         </colgroup>
-        <tr>
-            <th>1</th>
-            <th>링크</th>
-            <th>meno</th>
-        </tr>
-        <tr>
-            <td></td>
-            <td><a href="cgv_main.html">cgv main</a></td>
-            <td>cgv 메인페이지 따라하기 <br>반응형으로 수정해 봄.<br>SCSS <br>jQuery
-        </td>
-        <tr>
-            <td></td>
-            <td><a href="cgv_main.html">cgv main</a></td>
-            <td>무비차트 : cofic API / KMDB API 사용<br> 사용가능한 데이터만 적용 함.</td>
-        <tr>
-            <td></td>
-            <td><a href="join.html">회원가입</a></td>
-            <td>javascript</td>
-        </tr>
+        <thead>
+            <tr>
+                <th></th>
+                <th>url</th>
+                <th>check</th>
+                <th>meno</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td><a href="cgv_main.html">cgv main</a></td>
+                <td>SCSS <br>jQuery</td>
+                <td>cgv 메인페이지 따라하기 <br>반응형으로 수정해 봄.<br></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a href="cgv_main2.html">cgv main</a></td>
+                <td>javascript</td>
+                <td>cgv 메인에서 슬라이드 1개 영역 [무비차트]만 적용함<br>최근 영화는 누락된 이미지들이 많아서, 1년전 데이터 적용 함.<br><br>
+                    무비차트 : <a href="//www.kobis.or.kr/kobisopenapi/homepg/apiservice/searchServiceInfo.do">cofic API</a> / <a href="//www.kmdb.or.kr/info/api/apiDetail/6">KMDB API 사용</a>
+                    => <a href="./js/movie.js">javascript</a><br>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a href="join.html">회원가입</a></td>
+                <td>javascript</td>
+                <td>validation 제작<br><a href="./js/joinMember.js">javascript</a></td>
+            </tr>
+        </tbody>
     </table>
+    <script>
+        let check = document.querySelectorAll('tbody tr');     
+        check.forEach((el, i) => {
+           el.firstElementChild.textContent= i+1;    
+        });
+    </script>
 </body>
 </html>
