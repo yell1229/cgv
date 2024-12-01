@@ -1,8 +1,14 @@
 movieList();
 
 async function movieList(){
-    let date = new Date();
-    let getDate = (date.getFullYear()-1).toString().concat(date.getMonth()+1, date.getDate()-1);
+    // default table
+    let date = new Date(); 
+    let month = date.getMonth()+1;
+    let day = date.getDate() -1;
+    if(month === '13') month = 12;
+    else if(day === 0) month = month -1; day = 29;
+    let getDate = (date.getFullYear().toString().concat(month , day));
+    
     kobis(getDate)
         .then((result) => {
 
