@@ -17,13 +17,13 @@ function initForm(){
     document.querySelector('body').innerHTML = output;
 
     // default table
-    let date = new Date(); 
-    let month = date.getMonth()+1;
-    let day = date.getDate() -1;
-    if(month === '13') month = 12;
-    else if(day === 0) month = month -1; day = 29;
- 
-    movieList('Daily',date.getFullYear().toString().concat(month , day));
+    // let date = new Date(); 
+    // let month = date.getMonth();
+    // let day = date.getDate();
+    // if(month === '13') month = 12;
+    // else if(day === 0) {month = month -1; day = 29;}
+    
+    movieList('Daily',20241111);
 
     let type = document.querySelector('#type');
     let inputDate = document.querySelector('input.date');
@@ -108,7 +108,7 @@ async function posterList(title){
 // kobis api
 async function kobis(type,searchDt){
     const key = `e6cc18e742adf7189da38b34bb5ad8b9`;
-    const url = `http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/search${type}BoxOfficeList.json?key=${key}&targetDt=${searchDt}`;
+    const url = `https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/search${type}BoxOfficeList.json?key=${key}&targetDt=${searchDt}`;
     
     let data = await fetch(url);
     let jsonData = await data.json();
@@ -118,7 +118,7 @@ async function kobis(type,searchDt){
 // kmdb api
 async function kmdb(title){
     let key = `MO075W76WVQ09UK49059`;
-    let url = `http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2`;
+    let url = `https://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2`;
         url +=`&detail=Y&title=${title}&ServiceKey=${key}`;
 
     let kmdb = await fetch(url);

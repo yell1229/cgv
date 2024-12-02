@@ -60,7 +60,7 @@ async function getPoster(movieNm){
 // kofic api
 async function kobis(targetDt){
     let key = `e6cc18e742adf7189da38b34bb5ad8b9`;
-    let url = `	http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${key}&targetDt=${targetDt}`;
+    let url = `	https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${key}&targetDt=${targetDt}`;
     let kofic = await fetch(url); 
     let jsonData = await kofic.json();
     return jsonData;
@@ -69,7 +69,7 @@ async function kobis(targetDt){
 // kmdb api
 async function kmdb(title){
     let key = `MO075W76WVQ09UK49059`;
-    let url =  `http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?`;
+    let url =  `https://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?`;
         url += `collection=kmdb_new2&detail=Y&title=${title}&ServiceKey=${key}`;
     let kmdb = await fetch(url);
     let jsonData = await kmdb.json();
